@@ -5,6 +5,7 @@ public class Problem_3 {
         //code
         Scanner scan = new Scanner(System.in);
         System.out.print("What is your name? ");
-        System.out.println("Hello, " + scan.nextLine() + "!");
+        String name = scan.nextLine();
+        System.out.println("Hello, " + name + "!");
     }
 }
