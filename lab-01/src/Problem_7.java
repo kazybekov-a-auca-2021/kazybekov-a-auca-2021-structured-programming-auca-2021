@@ -1,10 +1,19 @@
+import java.util.Scanner;
+
 public class Problem_7 {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
         System.out.println("a    a^2    a^3");
-        System.out.println("1    1      1");
-        System.out.println("2    4      8");
-        System.out.println("3    9      27");
-        System.out.println("4    16     64");
-
+        for(int i=1;i<=n;i++){
+            System.out.println(i+"    "+pow(i,2)+"      "+pow(i,3));
+        }
+    }
+    public static int pow(int n, int amount){
+        int pow = 1;
+        for(int i=1;i<=amount;i++){
+            pow*=n;
+        }
+        return pow;
     }
 }
