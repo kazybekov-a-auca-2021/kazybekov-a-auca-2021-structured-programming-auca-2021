@@ -9,6 +9,7 @@ public class Task02 {
         int b = scan.nextInt();
         System.out.printf("Before swapping a = %d; b = %d;\n",a,b);
         a = a+b; b = a-b; a = a-b;
+        //low
         System.out.printf("After swapping a = %d; b = %d;\n",a,b);
     }
 }
