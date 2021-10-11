@@ -6,6 +6,15 @@ public class URI1021 {
         double number = scan.nextDouble();
         int n = (int)number;
         number = number-(double)n;
+        notas(n);
+        moedas(number,n);
+    }
+    public static Double twoFloat(double a){
+        String s = String.format("%.2f", a);
+        a = Double.parseDouble(s);
+        return a;
+    }
+    public static void notas(int n){
         System.out.println("NOTAS:");
         if(n>=100) System.out.println(n/100 + " nota(s) de R$ 100.00");
         else System.out.println("0 nota(s) de R$ 100.00");
@@ -25,6 +34,8 @@ public class URI1021 {
         if(n>=2) System.out.println(n/2 + " nota(s) de R$ 2.00");
         else System.out.println("0 nota(s) de R$ 2.00");
         n%=2;
+    }
+    public static void moedas(double number, int n){
         number+=(double)n;
         number=twoFloat(number);
         System.out.println("MOEDAS:");
@@ -50,10 +61,5 @@ public class URI1021 {
         number=twoFloat(number);
         if(number>=0.01) System.out.println((int)(number/0.01) + " moeda(s) de R$ 0.01");
         else System.out.println("0 moeda(s) de R$ 0.01");
-    }
-    public static Double twoFloat(double a){
-        String s = String.format("%.2f", a);
-        a = Double.parseDouble(s);
-        return a;
     }
 }
