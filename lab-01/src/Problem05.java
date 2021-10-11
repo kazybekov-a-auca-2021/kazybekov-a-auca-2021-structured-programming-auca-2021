@@ -1,24 +1,23 @@
 import java.util.Scanner;
 
-public class Problem_4 {
+public class Problem05 {
     public static void main (String[] args) {
         //code
         Scanner scan = new Scanner(System.in);
-        System.out.print("First int: ");
-        int a = scan.nextInt();
-        System.out.print("Second int: ");
-        int b = scan.nextInt();
+        System.out.print("First double: ");
+        double a = scan.nextDouble();
+        System.out.print("Second double: ");
+        double b = scan.nextDouble();
 
-        int sum = a+b;
-        int sub = a-b;
-        int prod = a*b;
-        int div = a/b;
-        int mod = a%b;
+        double sum = a+b;
+        double sub = a-b;
+        double prod = a*b;
+        double div = a/b;
+        double mod = a%b;
         System.out.println(a + " + " + b + " = " + sum);
         System.out.println(a + " - " + b + " = " + sub);
         System.out.println(a + " * " + b + " = " + prod);
         System.out.println(a + " / " + b + " = " + div);
         System.out.println(a + " % " + b + " = " + mod);
-
     }
 }

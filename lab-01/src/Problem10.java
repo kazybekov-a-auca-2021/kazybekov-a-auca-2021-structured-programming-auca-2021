@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Problem_10 {
+public class Problem10 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("1 year in seconds is 31536000");
