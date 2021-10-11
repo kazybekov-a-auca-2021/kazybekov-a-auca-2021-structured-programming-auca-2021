@@ -8,9 +8,9 @@ public class Task_1 {
         System.out.print("2nd value? ");
         int b = scan.nextInt();
         System.out.println("Before swapping: a = " + a + "; " + "b = " + b + ";");
-        int c = a;
+        int d = a;
         a = b;
-        b = c;
+        b = d;
         System.out.println("After swapping: a = " + a + "; " + "b = " + b + ";");
     }
 }
