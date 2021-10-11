@@ -10,6 +10,6 @@ public class Task02 {
         System.out.printf("Before swapping a = %d; b = %d;\n",a,b);
         a = a+b; b = a-b; a = a-b;
         //low
-        System.out.printf("After swapping a = %d; b = %d;\n",a,b);
+        System.out.printf("After swapping  a = %d; b = %d;\n",a,b);
     }
 }
