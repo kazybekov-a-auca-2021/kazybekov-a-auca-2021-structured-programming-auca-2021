@@ -6,7 +6,6 @@ public class URI1002 {
         double r = scan.nextDouble();
         double pi = 3.14159;
         double areaOfCircle = (r*r)*pi;
-        double rounding = Math.round(areaOfCircle * 10000.0)/10000.0;
-        System.out.println("A="+rounding);
+        System.out.printf("A=%.4f%n",areaOfCircle);
     }
 }
