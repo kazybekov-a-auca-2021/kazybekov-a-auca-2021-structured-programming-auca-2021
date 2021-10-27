@@ -1,7 +1,5 @@
 import processing.core.*;
 
-import java.util.Random;
-
 public class Problem01 extends PApplet {
 
     static float MIN_SIZE = 10;
@@ -9,7 +7,7 @@ public class Problem01 extends PApplet {
 
     static String MESSAGE = "Hello, Processing!!!";
 
-    float messageSize;
+    float messageSize, range;
     int red, green, blue;
 
     public void settings() {
@@ -18,6 +16,7 @@ public class Problem01 extends PApplet {
 
     public void setup() {
         messageSize = MIN_SIZE;
+        range = MAX_SIZE;
         red = 255;
         green = 0;
         blue = 0;
@@ -30,13 +29,13 @@ public class Problem01 extends PApplet {
         fill(red, green, blue);
         text(MESSAGE, width / 2f, height / 2f);
 
-        if (messageSize < MAX_SIZE - 1) {
+        if (messageSize < range - 1) {
             messageSize += 2;
         } else if (messageSize > MIN_SIZE + 1) {
             messageSize -= 2;
-            MAX_SIZE -= 2;
+            range -= 2;
         } else {
-            MAX_SIZE = 90;
+            range = 90;
             if (red == 255) {
                 green = 255;
                 red = 0;
