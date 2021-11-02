@@ -26,7 +26,7 @@ public class Problem01 extends PApplet {
         background(0, 0, 0);
         textSize(messageSize);
         textAlign(CENTER, CENTER);
-        fill(red, green, blue);
+        fill(red, green, blue);// 24 14 13
         text(MESSAGE, width / 2f, height / 2f);
 
         if (messageSize < range - 1) {
@@ -35,7 +35,7 @@ public class Problem01 extends PApplet {
             messageSize -= 2;
             range -= 2;
         } else {
-            range = 90;
+            range = MAX_SIZE;
             if (red == 255) {
                 green = 255;
                 red = 0;
