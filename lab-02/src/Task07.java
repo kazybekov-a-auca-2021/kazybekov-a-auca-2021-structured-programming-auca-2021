@@ -7,8 +7,8 @@ public class Task07 {
         System.out.print("Enter the radius and length of a cylinder: ");
         double r = scan.nextDouble();
         double l = scan.nextDouble();
-        double area = (r*r)*pi;
-        double volume = area*l;
-        System.out.printf("The area is %.4f\nThe volume is %.1f\n",area,volume);
+        double area = (r * r) * pi;
+        double volume = area * l;
+        System.out.printf("The area is %.4f\nThe volume is %.1f\n", area, volume);
     }
 }
