@@ -11,9 +11,9 @@ public class Problem3 {
         System.out.print("3rd number? ");
         int c = scan.nextInt();
 
-        int maxOfAB = (a+b+Math.abs(a-b))/2;
-        int maxOfAll = (c+maxOfAB+Math.abs(c-maxOfAB))/2;
+        int maxOfAB = (a + b + Math.abs(a - b)) / 2;
+        int maxOfAll = (c + maxOfAB + Math.abs(c - maxOfAB)) / 2;
 
-        System.out.printf("The value %d is the greatest one.",maxOfAll);
+        System.out.printf("The value %d is the greatest one.", maxOfAll);
     }
 }
