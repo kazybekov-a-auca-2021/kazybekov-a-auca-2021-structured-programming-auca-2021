@@ -7,8 +7,10 @@ public class Task01 {
         int a = scan.nextInt();
         System.out.print("2nd value? ");
         int b = scan.nextInt();
-        System.out.printf("Before swapping a = %d; b = %d;\n",a,b);
-        int c = a; a = b; b = c;
-        System.out.printf("After swapping  a = %d; b = %d;\n",a,c);
+        System.out.printf("Before swapping a = %d; b = %d;\n", a, b);
+        int c = a;
+        a = b;
+        b = c;
+        System.out.printf("After swapping  a = %d; b = %d;\n", a, b);
     }
 }
