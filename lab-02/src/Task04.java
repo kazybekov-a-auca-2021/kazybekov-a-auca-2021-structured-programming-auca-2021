@@ -5,7 +5,7 @@ public class Task04 {
         Scanner scan = new Scanner(System.in);
         System.out.print("Length in inches? ");
         double inch = scan.nextDouble();
-        double cm = inch*2.54;
-        System.out.printf("%d in. = %.2f%d\n",inch,cm);
+        double cm = inch * 2.54;
+        System.out.printf("%.0f in. = %.2f\n", inch, cm);
     }
 }
