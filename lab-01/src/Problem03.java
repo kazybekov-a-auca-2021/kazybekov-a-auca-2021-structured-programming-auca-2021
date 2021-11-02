@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Problem03 {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         //code
         Scanner scan = new Scanner(System.in);
         System.out.print("What is your name? ");
