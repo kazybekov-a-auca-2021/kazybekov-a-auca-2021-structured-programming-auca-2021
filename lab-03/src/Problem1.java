@@ -6,7 +6,9 @@ public class Problem1 {
         System.out.print("some real number? ");
         double realNumber = scan.nextDouble();
         double r = realNumber;
-        if (realNumber < 0) realNumber = -realNumber;
+        if (realNumber < 0) {
+            realNumber = -realNumber;
+        }
         System.out.printf("|%.4f| = %.4f", r, realNumber);
     }
 }
