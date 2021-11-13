@@ -4,21 +4,23 @@ public class URI1071 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt(), b = scan.nextInt();
-        if(a==b){
+        int sum = 0;
+        if (a > b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        if (a == b) {
             System.out.println(0);
+        } else if (a < 0) {
+            for (int i = a + 1; i < b; i++) {
+                if (i % 2 != 0) {
+                    sum += i;
+                }
+            }
+            System.out.println(sum);
         } else {
-            if (a > b) {
-                int temp = a;
-                a = b;
-                b = temp;
-            }
-            if (a < 0) {
-                a += 1;
-            } else {
-                a -= 1;
-            }
-            int sum = 0;
-            for (int i = a; i < b; i++) {
+            for (int i = a + 1; i < b; i++) {
                 if (i % 2 != 0) {
                     sum += i;
                 }
