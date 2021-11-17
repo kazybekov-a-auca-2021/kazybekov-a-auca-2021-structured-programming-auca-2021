@@ -12,13 +12,6 @@ public class URI1071 {
         }
         if (a == b) {
             System.out.println(0);
-        } else if (a < 0) {
-            for (int i = a + 1; i < b; i++) {
-                if (i % 2 != 0) {
-                    sum += i;
-                }
-            }
-            System.out.println(sum);
         } else {
             for (int i = a + 1; i < b; i++) {
                 if (i % 2 != 0) {
