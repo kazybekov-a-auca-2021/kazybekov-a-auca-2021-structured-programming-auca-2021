@@ -9,7 +9,7 @@ public class Problem10 {
         double y = scan.nextDouble();
 
         double distance = Math.sqrt(x * x + y * y);
-
+        //excellent
         if (distance <= 10) {
             System.out.printf("Point (%.1f, %.1f) is in the circle", x, y);
         } else {
