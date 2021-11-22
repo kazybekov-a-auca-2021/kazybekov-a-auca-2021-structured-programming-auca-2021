@@ -7,10 +7,10 @@ public class Problem02 {
         System.out.print("Integer? ");
         int n = scan.nextInt();
         int sum = 0;
-        while (n>0){
-            sum += n%10;
-            n/=10;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
         }
-        System.out.printf("The sum of all digits is %d\n",sum);
+        System.out.printf("The sum of all digits is %d\n", sum);
     }
 }
