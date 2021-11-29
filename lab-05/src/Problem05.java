@@ -7,18 +7,18 @@ public class Problem05 extends PApplet {
     int radius = 0, alpha = 0;
 
     public void settings() {
-        size(800,800);
+        size(800, 800);
     }
 
     public void setup() {
-        background(0,0,0);
+        background(0, 0, 0);
         alpha = 100;
         radius = 5;
         for (int i = 1; i <= MAX_NUMBER; i++) {
-            fill(255,0,0,alpha);
-            circle(width/2f,height/2f,radius);
-            radius+=35;
-            alpha-=5;
+            fill(255, 0, 0, alpha);
+            circle(width / 2f, height / 2f, radius);
+            radius += 35;
+            alpha -= 5;
         }
     }
 
