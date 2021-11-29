@@ -6,8 +6,8 @@ public class Problem04 extends PApplet {
     final int MAX_RADIUS = 100;
     final int COLOR_RANGE = 255;
 
-    int x, y, radius;
-    int r, g, b;
+    float x, y, radius;
+    float r, g, b;
 
     public void settings() {
         fullScreen();
@@ -25,12 +25,12 @@ public class Problem04 extends PApplet {
     public void draw() {
         background(0, 0, 0);
         for (int i = 0; i < MAX_NUMBER; i++) {
-            x = (int) (Math.random() * width);
-            y = (int) (Math.random() * height);
-            radius = (int) (Math.random() * MAX_RADIUS);
-            r = (int) (Math.random() * COLOR_RANGE);
-            g = (int) (Math.random() * COLOR_RANGE);
-            b = (int) (Math.random() * COLOR_RANGE);
+            x = random(width);
+            y = random(height);
+            radius = random(MAX_RADIUS);
+            r = random(COLOR_RANGE);
+            g = random(COLOR_RANGE);
+            b = random(COLOR_RANGE);
             fill(r, g, b);
             circle(x, y, radius);
         }
