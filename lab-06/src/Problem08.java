@@ -8,10 +8,10 @@ public class Problem08 {
         displayPattern(n);
     }
 
-    public static void displayPattern(int n){
+    public static void displayPattern(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = n; j >= 1; j--) {
-                if(j>i){
+                if (j > i) {
                     System.out.print("  ");
                 } else {
                     System.out.print(j + " ");
