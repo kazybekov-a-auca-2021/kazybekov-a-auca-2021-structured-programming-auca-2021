@@ -17,9 +17,9 @@ public class Problem01 {
         second = abs(userPoint - second);
 
         if (first < second) {
-            System.out.printf("1st point is closer. Distance %d", first);
+            System.out.printf("1st point is closer. Distance %d\n", first);
         } else {
-            System.out.printf("2nd point is closer. Distance %d", second);
+            System.out.printf("2nd point is closer. Distance %d\n", second);
         }
 
     }
