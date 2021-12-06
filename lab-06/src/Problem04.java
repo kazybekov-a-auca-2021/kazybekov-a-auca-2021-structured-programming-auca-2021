@@ -10,7 +10,7 @@ public class Problem04 {
         System.out.print("B = ");
         int b = scan.nextInt();
 
-        System.out.printf("GCD(%d, %d) = %d", a, b, gcd(a, b));
+        System.out.printf("GCD(%d, %d) = %d\n", a, b, gcd(a, b));
 
     }
 
