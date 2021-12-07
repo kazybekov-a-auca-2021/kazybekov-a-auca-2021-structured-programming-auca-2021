@@ -13,7 +13,7 @@ public class Problem05 {
         System.out.printf("GCD(%d, %d) = %d\n", a, b, gcd(a, b));
     }
 
-    public static int gcd(int a, int b) {
+    public static int gcd(int a, int b) { // 204 192
         int max = Math.max(a, b);
         int min = Math.min(a, b);
         if (max == 0) return max;
@@ -21,7 +21,7 @@ public class Problem05 {
         if (max % min == 0) {
             return min;
         } else {
-            int rem = max % min;
+            int rem = max % min; // 12 19
             return gcd(min, rem);
         }
     }
