@@ -10,10 +10,10 @@ public class URI1116 {
             double x = scan.nextDouble();
             double y = scan.nextDouble();
 
-            if(y==0){
+            if (y == 0) {
                 System.out.println("divisao impossivel");
             } else {
-                System.out.printf("%.1f\n",x/y);
+                System.out.printf("%.1f\n", x / y);
             }
         }
     }
