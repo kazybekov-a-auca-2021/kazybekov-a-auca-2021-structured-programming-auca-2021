@@ -21,7 +21,7 @@ public class URI1118 {
                     System.out.println("novo calculo (1-sim 2-nao)");
                     sum = 0;
                     count = 0;
-                }
+                } // changed
             } else {
                 System.out.println("nota invalida");
             }
