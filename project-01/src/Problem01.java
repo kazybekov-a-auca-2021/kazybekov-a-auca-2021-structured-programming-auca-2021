@@ -2,8 +2,8 @@ import processing.core.*;
 
 public class Problem01 extends PApplet {
 
-    static float MIN_SIZE = 10;
-    static float MAX_SIZE = 90;
+    static final float MIN_SIZE = 10;
+    static final float MAX_SIZE = 90;
 
     static String MESSAGE = "Hello, Processing!!!";
 
