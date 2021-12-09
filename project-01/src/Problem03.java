@@ -2,7 +2,7 @@ import processing.core.*;
 
 public class Problem03 extends PApplet {
     static final float RECT_WIDTH = 500;
-    static final float RECT_HEIGHT = 300;
+    static final float RECT_HEIGHT = 100;
 
     public void settings() {
         fullScreen();
@@ -17,57 +17,30 @@ public class Problem03 extends PApplet {
     public void draw() {
         background(0, 0, 0);
 
-        float rectTopLeftX = width / 2f - RECT_WIDTH / 2f;
-        float rectTopLeftY = height / 4f - RECT_HEIGHT / 2f;
-
-        fill(0, 0, 255, 90);
-        stroke(0, 0, 255, 100);
-        rect(rectTopLeftX, rectTopLeftY, RECT_WIDTH, RECT_HEIGHT);
-
-        if (mouseX >= rectTopLeftX && mouseX <= rectTopLeftX + RECT_WIDTH && mouseY >= rectTopLeftY && mouseY <= rectTopLeftY + RECT_HEIGHT / 3f) {
-            fill(255, 0, 0);
-        } else {
-            fill(255, 255, 255);
-        }
-        text("Java Programming Language", rectTopLeftX + RECT_WIDTH / 2f, rectTopLeftY + RECT_HEIGHT / 6f);
-
-        fill(0, 0, 0);
-        line(rectTopLeftX, rectTopLeftY + (RECT_HEIGHT / 3f), rectTopLeftX + RECT_WIDTH, rectTopLeftY + (RECT_HEIGHT / 3f));
-
-        if (mouseX >= rectTopLeftX && mouseX <= rectTopLeftX + RECT_WIDTH &&
-                mouseY >= rectTopLeftY + (RECT_HEIGHT / 3f) && mouseY <= rectTopLeftY + (RECT_HEIGHT / 3f) + RECT_HEIGHT / 3f) {
-            fill(255, 0, 0);
-        } else {
-            fill(255, 255, 255);
-        }
-        text("Kotlin Programming Language", rectTopLeftX + RECT_WIDTH / 2f, rectTopLeftY + RECT_HEIGHT / 2f);
-
-        fill(0, 0, 0);
-        line(rectTopLeftX, rectTopLeftY + 2 * (RECT_HEIGHT / 3f), rectTopLeftX + RECT_WIDTH, rectTopLeftY + 2 * (RECT_HEIGHT / 3f));
-
-        if (mouseX >= rectTopLeftX && mouseX <= rectTopLeftX + RECT_WIDTH &&
-                mouseY >= rectTopLeftY + 2 * (RECT_HEIGHT / 3f) && mouseY <= rectTopLeftY + 2 * (RECT_HEIGHT / 3f) + RECT_HEIGHT / 3f) {
-            fill(255, 0, 0);
-        } else {
-            fill(255, 255, 255);
-        }
-        text("Scala Programming Language", rectTopLeftX + RECT_WIDTH / 2f, rectTopLeftY + 5 * RECT_HEIGHT / 6f);
-
         fill(0, 0, 100);
-        ellipse(mouseX, mouseY, 1, 1);
+        ellipse(mouseX, mouseY, 100, 100);
 
+        Object[][] info = {
+                {"Java", 1995, 2},
+                {"Kotlin", 2011, 11},
+                {"Scala", 2004, 20}
+        };
 
-        if (mouseX >= rectTopLeftX && mouseX <= rectTopLeftX + RECT_WIDTH && mouseY >= rectTopLeftY && mouseY <= rectTopLeftY + RECT_HEIGHT / 3f) {
-            fill(255, 255, 255);
-            text("Year: 1995. PYPL Index: 2", width / 2f, height - height / 10f);
-        } else if (mouseX >= rectTopLeftX && mouseX <= rectTopLeftX + RECT_WIDTH &&
-                mouseY >= rectTopLeftY + (RECT_HEIGHT / 3f) && mouseY <= rectTopLeftY + (RECT_HEIGHT / 3f) + RECT_HEIGHT / 3f) {
-            fill(255, 255, 255);
-            text("Year: 2011. PYPL Index: 11", width / 2f, height - height / 10f);
-        } else if (mouseX >= rectTopLeftX && mouseX <= rectTopLeftX + RECT_WIDTH &&
-                mouseY >= rectTopLeftY + 2 * (RECT_HEIGHT / 3f) && mouseY <= rectTopLeftY + 2 * (RECT_HEIGHT / 3f) + RECT_HEIGHT / 3f) {
-            fill(255, 255, 255);
-            text("Year: 2004. PYPL Index: 20", width / 2f, height - height / 10f);
+        for (int i = 0; i < info.length; i++) {
+            float rectTopLeftX = width / 2f - RECT_WIDTH / 2f;
+            float rectTopLeftY = RECT_HEIGHT + i * RECT_HEIGHT;
+
+            fill(0, 0, 255);
+            rect(rectTopLeftX, rectTopLeftY, RECT_WIDTH, RECT_HEIGHT);
+
+            if (mouseX >= rectTopLeftX && mouseX <= rectTopLeftX + RECT_WIDTH && mouseY >= rectTopLeftY && mouseY <= rectTopLeftY + RECT_HEIGHT) {
+                fill(255, 255, 0);
+                text("Year: " + info[i][1] + " PYPL Index: " + info[i][2], width / 2f, height - height / 10f);
+                fill(255, 0, 0);
+            } else {
+                fill(255, 255, 255);
+            }
+            text(info[i][0] + " Programming Language", rectTopLeftX + RECT_WIDTH / 2f, rectTopLeftY + RECT_HEIGHT / 2f);
         }
     }
 
