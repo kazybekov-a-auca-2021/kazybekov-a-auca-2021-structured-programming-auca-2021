@@ -4,24 +4,34 @@ public class Problem04 extends PApplet {
 
     float circleX, circleY, circleR;
 
-    public void settings() {
-        fullScreen();
-    }
+    float columns, rows, scale;
+
+    public void settings() {fullScreen();    }
 
     public void setup() {
-        circleX = width/2f;
-        circleY = height/2f;
         circleR = height/20f;
-        frameRate(5);
+        circleX = circleR/2f;
+        circleY = circleR/2f;
+
+        scale = height/20f;
+        columns = width/scale;
+        rows = height/scale;
+
     }
 
     public void draw() {
-        fill(0,0,0,50);
-        rect(0,0,width,height);
+
+        fill(0,0,0,100);
+        noStroke();
+        for (float x = 0; x < columns; x++) {
+            for (float y = 0; y < rows; y++) {
+                rect((x * scale) + 1, (y * scale) + 1, scale - 2, scale - 2);
+            }
+        }
+
 
         fill(255,0,0);
         circle(circleX,circleY,circleR);
-
 
         if (key == CODED){
             switch (keyCode){
