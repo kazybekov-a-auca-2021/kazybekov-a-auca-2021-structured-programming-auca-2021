@@ -1,27 +1,49 @@
 import java.util.Scanner;
 
 public class Problem02 {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
 
-        System.out.print("Month: ");
-        int month = scan.nextInt();
-        System.out.print("Year: ");
-        int year = scan.nextInt();
+    static Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        while (true) {
+            try {
+                int month = readNumber("Month: ", "Incorrect message of the month", 1, 12);
+                int year = readNumber("Year: ", "Incorrect message of the year", 1, 1000000);
+                int days = numberOfDays(month, year);
+                System.out.println("Number of days: " + days);
+            } catch (Exception e) {
+                System.out.println("Out of my job.");
+                break;
+            }
+        }
     }
 
-    public static int numberOfDays(int month, int year){
-        if(month == 2 && (year%400==0 || (year%4==0 && year%100!=0))){
-            return 29;
+    public static int readNumber(String message, String error, int start, int finish) {
+        System.out.print(message);
+
+        int res = scan.nextInt();
+
+        if (res < start || res > finish) {
+            System.out.println(error);
+            System.exit(1);
         }
 
-        int days = 0;
-        switch (month){
-            case 1, 3, 5, 7, 8, 10, 12 -> days = 31;
-            case 2 -> days = 28;
-            case 4, 6, 9, 11 -> days =30;
-        }
+        return res;
+    }
 
-        return days;
+
+    public static int numberOfDays(int month, int year) {
+
+        int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int fin = days[month - 1];
+        if (leapYear(year) && month == 2) {
+            fin++;
+        }
+        return fin;
+    }
+
+    public static boolean leapYear(int year) {
+        return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
     }
 }
