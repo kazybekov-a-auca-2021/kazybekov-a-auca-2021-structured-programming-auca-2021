@@ -6,22 +6,25 @@ public class Problem04 extends PApplet {
 
     float columns, rows, scale;
 
-    public void settings() {fullScreen();    }
+    public void settings() {
+        fullScreen();
+    }
 
     public void setup() {
-        circleR = height/20f;
-        circleX = circleR/2f;
-        circleY = circleR/2f;
+        circleR = height / 20f;
+        circleX = circleR / 2f;
+        circleY = circleR / 2f;
 
-        scale = height/20f;
-        columns = width/scale;
-        rows = height/scale;
+        scale = height / 20f;
+        columns = width / scale;
+        rows = height / scale;
+        frameRate(10);
 
     }
 
     public void draw() {
 
-        fill(0,0,0,100);
+        fill(0, 0, 0, 100);
         noStroke();
         for (float x = 0; x < columns; x++) {
             for (float y = 0; y < rows; y++) {
@@ -30,23 +33,15 @@ public class Problem04 extends PApplet {
         }
 
 
-        fill(255,0,0);
-        circle(circleX,circleY,circleR);
+        fill(255, 0, 0);
+        circle(circleX, circleY, circleR);
 
-        if (key == CODED){
-            switch (keyCode){
-                case UP:
-                    circleY-=2*circleR;
-                    break;
-                case DOWN:
-                    circleY+=2*circleR;
-                    break;
-                case LEFT:
-                    circleX-=2*circleR;
-                    break;
-                case RIGHT:
-                    circleX+=2*circleR;
-                    break;
+        if (key == CODED) {
+            switch (keyCode) {
+                case UP -> circleY -= 2 * circleR;
+                case DOWN -> circleY += 2 * circleR;
+                case LEFT -> circleX -= 2 * circleR;
+                case RIGHT -> circleX += 2 * circleR;
             }
         }
     }
