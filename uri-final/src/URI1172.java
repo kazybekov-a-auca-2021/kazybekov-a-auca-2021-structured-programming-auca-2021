@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class URI1155 {
+public class URI1172 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
