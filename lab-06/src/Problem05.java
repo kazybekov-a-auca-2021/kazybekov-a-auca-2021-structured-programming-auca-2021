@@ -21,7 +21,7 @@ public class Problem05 {
         if (max % min == 0) {
             return min;
         } else {
-            int rem = max % min; // 12 19
+            int rem = max % min; // 12 192
             return gcd(min, rem);
         }
     }

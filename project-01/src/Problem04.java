@@ -26,11 +26,7 @@ public class Problem04 extends PApplet {
 
         fill(0, 0, 0, 100);
         noStroke();
-        for (float x = 0; x < columns; x++) {
-            for (float y = 0; y < rows; y++) {
-                rect((x * scale) + 1, (y * scale) + 1, scale - 2, scale - 2);
-            }
-        }
+
 
 
         fill(255, 0, 0);
