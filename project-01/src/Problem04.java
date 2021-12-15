@@ -2,6 +2,8 @@ import processing.core.*;
 
 public class Problem04 extends PApplet {
 
+    float horizontal, vertical;
+
     float circleX, circleY, circleR;
 
     float columns, rows, scale;
@@ -11,26 +13,20 @@ public class Problem04 extends PApplet {
     }
 
     public void setup() {
-        circleR = height / 20f;
         circleX = circleR / 2f;
         circleY = circleR / 2f;
-
-        scale = height / 20f;
-        columns = width / scale;
-        rows = height / scale;
+        circleR = height / 20f;
         frameRate(10);
 
     }
 
     public void draw() {
-
-        fill(0, 0, 0, 100);
-        noStroke();
-
+        fill(0,0,0,50);
+        rect(0,0,width,height);
 
 
-        fill(255, 0, 0);
-        circle(circleX, circleY, circleR);
+        fill(255,0,0);
+        circle(circleX,circleY,circleR);
 
         if (key == CODED) {
             switch (keyCode) {
