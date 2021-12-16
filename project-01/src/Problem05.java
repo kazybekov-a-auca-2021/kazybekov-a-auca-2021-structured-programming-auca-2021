@@ -20,11 +20,11 @@ public class Problem05 extends PApplet {
         textSize(30);
         textPosX = width / 2f - width / 9f;
         textPosY = height / 2f - height / 2.3f;
-        rectX = width / 2f - width / 4f;
+        rectX = width / 2f - width / 4.65f;
         rectY = height / 2f - height / 2.5f;
-        color = "White";
-        row = 1;
-        column = 5;
+        color = "NoColor";
+        row = 0;
+        column = 0;
 
         try {
             String strRadius = JOptionPane.showInputDialog("Enter the board' size [4,12]: ");
@@ -52,13 +52,13 @@ public class Problem05 extends PApplet {
 
         for (int i = 0; i < radius; i++) {
             for (int j = 0; j < radius; j++) {
-                if ((i+j) % 2 == 0) {
+                float w = rectX + i * DESK_SIZE / radius;
+                float l = rectY + j * DESK_SIZE / radius;
+                if ((i + j) % 2 == 0) {
                     fill(255, 255, 255);
                 } else {
                     fill(1, 50, 32);
                 }
-                float w = rectX + i * DESK_SIZE / radius;
-                float l = rectY + j * DESK_SIZE / radius;
                 if (mouseX > w && mouseY > l && mouseX < w + DESK_SIZE / radius && mouseY < l + DESK_SIZE / radius) {
                     row = i;
                     column = j;
@@ -67,10 +67,10 @@ public class Problem05 extends PApplet {
                     } else {
                         color = "White";
                     }
-                    noFill();
-                    square(w,l,DESK_SIZE/radius);
+                    fill(255, 0, 0);
+                    square(w, l, DESK_SIZE / radius);
                 }
-                square(rectX + i * DESK_SIZE / radius, rectY + j * DESK_SIZE / radius, DESK_SIZE / radius);
+                square(w, l, DESK_SIZE / radius);
             }
         }
         fill(255, 0, 0);
