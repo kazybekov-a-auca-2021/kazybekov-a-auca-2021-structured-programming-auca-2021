@@ -51,46 +51,26 @@ public class Problem05 extends PApplet {
 
 
         for (int i = 0; i < radius; i++) {
-            if (i % 2 == 0) {
-                for (int j = 0; j < radius; j++) {
-                    if (j % 2 == 0) {
-                        fill(255, 255, 255);
-                    } else {
-                        fill(1, 50, 32);
-                    }
-                    float w = rectX + i * DESK_SIZE / radius;
-                    float l = rectY + j * DESK_SIZE / radius;
-                    if (mouseX > w && mouseY > l && mouseX < w + DESK_SIZE / radius && mouseY < l + DESK_SIZE / radius) {
-                        row = i;
-                        column = j;
-                        if ((i + j) % 2 != 0) {
-                            color = "Dark-Green";
-                        } else {
-                            color = "White";
-                        }
-                    }
-                    square(rectX + i * DESK_SIZE / radius, rectY + j * DESK_SIZE / radius, DESK_SIZE / radius);
+            for (int j = 0; j < radius; j++) {
+                if ((i+j) % 2 == 0) {
+                    fill(255, 255, 255);
+                } else {
+                    fill(1, 50, 32);
                 }
-            } else {
-                for (int j = 0; j < radius; j++) {
-                    if (j % 2 == 0) {
-                        fill(1, 50, 32);
+                float w = rectX + i * DESK_SIZE / radius;
+                float l = rectY + j * DESK_SIZE / radius;
+                if (mouseX > w && mouseY > l && mouseX < w + DESK_SIZE / radius && mouseY < l + DESK_SIZE / radius) {
+                    row = i;
+                    column = j;
+                    if ((i + j) % 2 != 0) {
+                        color = "Dark-Green";
                     } else {
-                        fill(255, 255, 255);
+                        color = "White";
                     }
-                    float w = rectX + i * DESK_SIZE / radius;
-                    float l = rectY + j * DESK_SIZE / radius;
-                    if (mouseX > w && mouseY > l && mouseX < w + DESK_SIZE / radius && mouseY < l + DESK_SIZE / radius) {
-                        row = i;
-                        column = j;
-                        if ((i + j) % 2 != 0) {
-                            color = "Dark-Green";
-                        } else {
-                            color = "White";
-                        }
-                    }
-                    square(rectX + i * DESK_SIZE / radius, rectY + j * DESK_SIZE / radius, DESK_SIZE / radius);
+                    noFill();
+                    square(w,l,DESK_SIZE/radius);
                 }
+                square(rectX + i * DESK_SIZE / radius, rectY + j * DESK_SIZE / radius, DESK_SIZE / radius);
             }
         }
         fill(255, 0, 0);
