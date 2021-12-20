@@ -19,17 +19,17 @@ public class URI1179 {
                 odd++;
             }
 
-            if (even == 5){
-                print("par[%d] = %d\n",evenSet,5);
+            if (even == 5) {
+                print("par[%d] = %d\n", evenSet, 5);
                 even = 0;
             }
-            if (odd == 5){
-                print("impar[%d] = %d\n",oddSet,5);
+            if (odd == 5) {
+                print("impar[%d] = %d\n", oddSet, 5);
                 odd = 0;
             }
-            if (i == 14){
-                print("impar[%d] = %d\n",oddSet,odd);
-                print("par[%d] = %d\n",evenSet,even);
+            if (i == 14) {
+                print("impar[%d] = %d\n", oddSet, odd);
+                print("par[%d] = %d\n", evenSet, even);
             }
         }
     }
