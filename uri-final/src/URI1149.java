@@ -8,13 +8,13 @@ public class URI1149 {
 
         do {
             n = scan.nextInt();
-        } while (n<=0);
+        } while (n <= 0);
 
         int num = a;
         n--;
-        while (n>0){
+        while (n > 0) {
             a++;
-            num+=a;
+            num += a;
             n--;
         }
 
