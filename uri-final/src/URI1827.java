@@ -4,6 +4,7 @@ public class URI1827 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n;
+
         try {
             while (scan.hasNextLine()){
                 n = scan.nextInt();
@@ -17,6 +18,7 @@ public class URI1827 {
     }
 
     public static void grid(int n, int[][] set){
+        int inner = n/3;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if(n%2!=0){
@@ -30,7 +32,9 @@ public class URI1827 {
                         set[i][j] = 0;
                     }
                 } else {
-                    if(i==(n-1)/2 || i==(n-1)/2+1){
+                    if((i >inner || i<n-inner) && j>inner && j<n-inner ){
+                        set[i][j] = 1;
+                    } else if(i==(n-1)/2 || i==(n-1)/2+1){
                         if(j==(n-1)/2 || j==(n-1)/2+1){
                             set[i][j] = 4;
                         }
