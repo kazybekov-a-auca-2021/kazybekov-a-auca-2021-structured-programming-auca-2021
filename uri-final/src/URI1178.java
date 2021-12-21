@@ -5,18 +5,15 @@ public class URI1178 {
         Scanner scan = new Scanner(System.in);
 
         double number = scan.nextDouble();
+        double[] set = new double[100];
 
-        int length = 0;
-        double[] arr = new double[100];
-
-        while (length < 100) {
-            arr[length] = number;
-            number /= 2;
-            length++;
+        for (int i = 0; i < 100; i++) {
+            set[i] = number;
+            number/=2.0;
         }
 
-        for (int i = 0; i < length; i++) {
-            System.out.printf("N[%d] = %.4f\n", i, arr[i]);
+        for (int i = 0; i < 100; i++) {
+            System.out.printf("N[%d] = %.4f\n",i,set[i]);
         }
     }
 }
