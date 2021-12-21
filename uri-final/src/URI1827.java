@@ -24,6 +24,10 @@ public class URI1827 {
                 if(n%2!=0){
                     if (i==(n-1)/2 && j==(n-1)/2){
                         set[i][j] = 4;
+                    } else if((i >= inner && i<n-inner)){
+                        if(j>=inner && j<n-inner){
+                            set[i][j] = 1;
+                        }
                     } else if (i==j){
                         set[i][j] = 2;
                     } else if(j==n-i-1){
@@ -32,13 +36,15 @@ public class URI1827 {
                         set[i][j] = 0;
                     }
                 } else {
-                    if((i >inner || i<n-inner) && j>inner && j<n-inner ){
-                        set[i][j] = 1;
-                    } else if(i==(n-1)/2 || i==(n-1)/2+1){
+                    if(i==(n-1)/2 || i==(n-1)/2+1){
                         if(j==(n-1)/2 || j==(n-1)/2+1){
                             set[i][j] = 4;
                         }
-                    } else if (i==j){
+                    } else if((i >=inner-1 && i<=n-inner)){
+                        if(j>=inner-1 && j<n-inner+1){
+                            set[i][j] = 1;
+                        }
+                    }  else if (i==j){
                         set[i][j] = 2;
                     } else if(j==n-i-1){
                         set[i][j] = 3;

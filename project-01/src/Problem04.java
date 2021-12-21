@@ -18,9 +18,9 @@ public class Problem04 extends PApplet {
         frameRate(10);
         rectX = width / 2f - width / 4.65f;
         rectY = height / 2f - height / 3.0f;
-        circleR = FIELD/amount;
-        circleX = rectX + circleR;
-        circleY = rectY + circleR;
+        circleR = height/20f;
+        circleX = rectX + circleR/2f;
+        circleY = rectY + circleR/2f;
 
         amount = 12;
     }
@@ -33,14 +33,14 @@ public class Problem04 extends PApplet {
         stroke(0,0,255);
         rect(rectX,rectY,FIELD,FIELD);
 
-        for (int i = 0; i < amount; i++) {
-            for (int j = 0; j < amount; j++) {
-                float w = rectX + i * FIELD / amount;
-                float l = rectY + j * FIELD / amount;
-
-                square(w, l, FIELD / amount);
-            }
-        }
+//        for (int i = 0; i < amount; i++) {
+//            for (int j = 0; j < amount; j++) {
+//                float w = rectX + i * FIELD / amount;
+//                float l = rectY + j * FIELD / amount;
+//
+//                square(w, l, FIELD / amount);
+//            }
+//        }
 
         fill(255,0,0);
         circle(circleX,circleY,circleR);
