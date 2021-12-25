@@ -2,55 +2,101 @@ import processing.core.*;
 
 public class Problem04 extends PApplet {
 
-    final float FIELD = 700;
-
-    float rectX, rectY;
-
     float circleX, circleY, circleR;
-    float amount = 20;
+    float foodX, foodY, foodR;
+    float a, b, c, d;
+
+    int score;
 
     public void settings() {
         fullScreen();
     }
 
     public void setup() {
-
         frameRate(10);
-        rectX = width / 2f - width / 4.65f;
-        rectY = height / 2f - height / 3.0f;
-        circleR = height/20f;
-        circleX = rectX + circleR/2f;
-        circleY = rectY + circleR/2f;
+        textSize(50);
+        score = -1;
+        circleX = width / 4f + 25;
+        circleY = height / 4f + 25;
+        circleR = 50f;
+        foodX = circleX;
+        foodY = circleY;
+        foodR = circleR;
 
-        amount = 12;
+        a = circleX;
+        b = width / 4f + 775;
+
+        c = circleY;
+        d = height / 4f + 475;
     }
 
     public void draw() {
-        fill(0,0,0,50);
-        rect(0,0,width,height);
+        fill(0, 0, 0, 50);
+        rect(0, 0, width, height);
+        noStroke();
+        fill(0, 255, 0);
+        text("Game: Yellow Circles using Arrow Buttons", width / 2f - 430, height / 6f);
+        text("Score: " + score, width / 2f - 100, height - 50);
+        stroke(0, 0, 255);
+        fill(0, 0, 255);
 
-        noFill();
-        stroke(0,0,255);
-        rect(rectX,rectY,FIELD,FIELD);
+        for (int i = 0; i <= 500; i += 50) {
+            fill(0, 0, 255);
+            line(width / 4f, height / 4f + i, width / 4f + 800f, height / 4f + i);
+        }
+        for (int i = 0; i <= 800; i += 50) {
+            fill(0, 0, 255);
+            line(width / 4f + i, height / 4f, width / 4f + i, height / 4f + 500);
+        }
 
-//        for (int i = 0; i < amount; i++) {
-//            for (int j = 0; j < amount; j++) {
-//                float w = rectX + i * FIELD / amount;
-//                float l = rectY + j * FIELD / amount;
-//
-//                square(w, l, FIELD / amount);
-//            }
-//        }
+        noStroke();
+        frameRate(10);
+        fill(255, 0, 0);
+        circle(circleX, circleY, circleR);
 
-        fill(255,0,0);
-        circle(circleX,circleY,circleR);
-        if (key == CODED){
-            switch (keyCode){
-                case UP -> circleY -= 2 * circleR;
-                case DOWN -> circleY += 2 * circleR;
-                case LEFT -> circleX -= 2 * circleR;
-                case RIGHT -> circleX += 2 * circleR;
+        if (key == CODED) {
+            switch (keyCode) {
+                case UP -> circleY -=  circleR;
+                case DOWN -> circleY +=  circleR;
+                case LEFT -> circleX -=  circleR;
+                case RIGHT -> circleX +=  circleR;
             }
+        }
+
+        if (circleX <= (width / 4f)) {
+            circleX = a;
+        }
+        if (circleX >= (width / 4f + 800)) {
+            circleX = b;
+        }
+        if (circleY <= (height / 4f + 25)) {
+            circleY = c;
+        }
+        if (circleY >= (height / 4f + 500)) {
+            circleY = d;
+        }
+
+        fill(255, 255, 0);
+        circle(foodX,foodY,foodR);
+        if (circleY == foodY && circleX == foodX) {
+            foodX = foodX + foodR + 100 * ((int) random(0, 20));
+            foodY = foodY + foodR + 100 * ((int) random(0, 20));
+            foodX = foodX + foodR - 100 * ((int) random(0, 20));
+            foodY = foodY + foodR - 100 * ((int) random(0, 20));
+            score++;
+        }
+
+        if (foodX <= (width / 4f)) {
+            foodX = a;
+        }
+        if (foodX >= (width / 4f + 800)) {
+            foodX = b;
+        }
+        if (foodY <= height / 4f + 25) {
+            foodY = c;
+        }
+        if (foodY >= (height / 4f + 500)) {
+            foodY = d;
         }
     }
 

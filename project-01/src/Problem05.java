@@ -67,7 +67,7 @@ public class Problem05 extends PApplet {
                     } else {
                         color = "White";
                     }
-                    fill(255, 0, 0);
+                    noFill();
                     square(w, l, DESK_SIZE / radius);
                 }
                 square(w, l, DESK_SIZE / radius);
