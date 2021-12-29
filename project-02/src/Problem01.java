@@ -30,13 +30,18 @@ public class Problem01 extends PApplet {
 
     public void draw() {
         background(0, 0, 0);
+
         fill(255, 255, 0);
+
         textSize(70);
         text("Game 15", width / 2f, height / 10f);
+
         textSize(50);
         text("Moves: " + moves, width / 2f + width / 3f, height / 2f);
+
         textSize(60);
         text("Start/Restart: Enter", width / 2f, height - height / 10f);
+
         fill(0, 0, 0);
         stroke(200, 200, 200);
         square(x, y, DESK_SIZE);
